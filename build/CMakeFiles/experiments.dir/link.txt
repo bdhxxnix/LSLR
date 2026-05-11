@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -march=native -DNDEBUG CMakeFiles/experiments.dir/src/optimal_pla.cpp.o CMakeFiles/experiments.dir/src/lslr_pla.cpp.o CMakeFiles/experiments.dir/src/baselines.cpp.o CMakeFiles/experiments.dir/src/data_generator.cpp.o CMakeFiles/experiments.dir/main.cpp.o -o experiments 

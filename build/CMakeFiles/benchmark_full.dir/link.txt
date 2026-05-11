@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -march=native -DNDEBUG CMakeFiles/benchmark_full.dir/src/optimal_pla.cpp.o CMakeFiles/benchmark_full.dir/src/lslr_pla.cpp.o CMakeFiles/benchmark_full.dir/src/baselines.cpp.o CMakeFiles/benchmark_full.dir/src/data_generator.cpp.o CMakeFiles/benchmark_full.dir/benchmark_full.cpp.o -o benchmark_full 

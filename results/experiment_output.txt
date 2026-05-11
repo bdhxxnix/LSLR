@@ -1,0 +1,63 @@
+======================================================================
+  LSLR-PLA: Lazy-Shift Local-Repair Dynamic OptimalPLA
+  Experiment Suite
+======================================================================
+
+Total experiment configurations: 72
+  Datasets: 4, Sizes: 2, Epsilons: 3, Workloads: 3
+
+[1/72] 
+------------------------------------------------------------
+Dataset: fb_200M, n=100000, eps=64, workload=uniform_random, insert_ratio=0.1
+------------------------------------------------------------
+  Generating initial keys... done (100000 keys, range [2246158, 77308815164])
+  Initial model: 9 segments
+  Generating insertion workload... done (10000 keys)
+  Running Full-Rebuild-Final (oracle)... 10 segments, 0.1s
+  Running Full-Rebuild-Each... 20% 40% 60% 80% 100% done: 65.5s, 6545.2us/insert
+  Running Periodic-Rebuild (every 1000)... done: 0.1s, 10 segments
+  Running LSLR-c0... 20% 40% 60% 80% 100% done: 2.1s, 775 segs (overhead 77.500x), avg 205.3us/insert
+  Running LSLR-c1... 20% 40% 60% 80% 100% done: 18.9s, 10 segs (overhead 1.000x), avg 1895.0us/insert
+  Running LSLR-c2... 20% 40% 60% 80% 100% done: 31.2s, 10 segs (overhead 1.000x), avg 3124.1us/insert
+  Running LSLR-adaptive... 20% 40% 60% 80% 100% done: 31.1s, 10 segs (overhead 1.000x), avg 3114.6us/insert
+
+[2/72] 
+------------------------------------------------------------
+Dataset: fb_200M, n=100000, eps=64.0, workload=same_dist, insert_ratio=0.1
+------------------------------------------------------------
+  Generating initial keys... done (100000 keys, range [2246158, 77308815164])
+  Initial model: 9 segments
+  Generating insertion workload... done (10000 keys)
+  Running Full-Rebuild-Final (oracle)... 11 segments, 0.1s
+  Running Periodic-Rebuild (every 1000)... done: 0.1s, 11 segments
+  Running LSLR-c0... 20% 40% 60% 80% 100% done: 2.0s, 813 segs (overhead 73.909x), avg 200.2us/insert
+  Running LSLR-c1... 20% 40% 60% 80% 100% done: 17.9s, 11 segs (overhead 1.000x), avg 1790.0us/insert
+  Running LSLR-c2... 20% 40% 60% 80% 100% done: 31.6s, 11 segs (overhead 1.000x), avg 3156.7us/insert
+  Running LSLR-adaptive... 20% 40% 60% 80% 100% done: 29.8s, 11 segs (overhead 1.000x), avg 2981.3us/insert
+
+[3/72] 
+------------------------------------------------------------
+Dataset: fb_200M, n=100000, eps=64.0, workload=append, insert_ratio=0.1
+------------------------------------------------------------
+  Generating initial keys... done (100000 keys, range [2246158, 77308815164])
+  Initial model: 9 segments
+  Generating insertion workload... done (10000 keys)
+  Running Full-Rebuild-Final (oracle)... 9 segments, 0.0s
+  Running Periodic-Rebuild (every 1000)... done: 0.1s, 9 segments
+  Running LSLR-c0... 20% 40% 60% 80% 100% done: 4.1s, 9 segs (overhead 1.000x), avg 414.1us/insert
+  Running LSLR-c1... 20% 40% 60% 80% 100% done: 12.2s, 9 segs (overhead 1.000x), avg 1223.8us/insert
+  Running LSLR-c2... 20% 40% 60% 80% 100% done: 19.5s, 9 segs (overhead 1.000x), avg 1947.7us/insert
+  Running LSLR-adaptive... 20% 40% 60% 80% 100% done: 18.8s, 9 segs (overhead 1.000x), avg 1878.8us/insert
+
+[4/72] 
+------------------------------------------------------------
+Dataset: fb_200M, n=100000, eps=128.0, workload=uniform_random, insert_ratio=0.1
+------------------------------------------------------------
+  Generating initial keys... done (100000 keys, range [2246158, 77308815164])
+  Initial model: 3 segments
+  Generating insertion workload... done (10000 keys)
+  Running Full-Rebuild-Final (oracle)... 4 segments, 0.1s
+  Running Periodic-Rebuild (every 1000)... done: 0.1s, 4 segments
+  Running LSLR-c0... 20% 40% 60% 80% 100% done: 4.1s, 593 segs (overhead 148.250x), avg 411.0us/insert
+  Running LSLR-c1... 20% 40% 60% 80% 100% done: 50.7s, 4 segs (overhead 1.000x), avg 5067.0us/insert
+  Running LSLR-c2... 20% 40% 60% 
