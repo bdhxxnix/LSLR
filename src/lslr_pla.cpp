@@ -97,10 +97,10 @@ size_t LSLR_PLA::predict(Key x) const {
     if (keys_.empty()) return 0;
     size_t seg_id = find_segment(x);
     const auto& seg = segments_[seg_id];
-    double pred = seg.slope * static_cast<double>(x) + seg.intercept;
+    long double pred = seg.slope * static_cast<long double>(x) + seg.intercept;
     if (pred < 0) pred = 0;
-    if (pred > static_cast<double>(keys_.size() - 1))
-        pred = static_cast<double>(keys_.size() - 1);
+    if (pred > static_cast<long double>(keys_.size() - 1))
+        pred = static_cast<long double>(keys_.size() - 1);
     return static_cast<size_t>(std::round(pred));
 }
 
@@ -317,9 +317,9 @@ std::pair<double, size_t> LSLR_PLA::validate() const {
     for (size_t i = 0; i < keys_.size(); ++i) {
         size_t seg_id = find_segment(keys_[i]);
         const auto& seg = segments_[seg_id];
-        double pred = seg.slope * static_cast<double>(keys_[i]) + seg.intercept;
-        double err = std::abs(pred - static_cast<double>(i));
-        max_err = std::max(max_err, err);
+        long double pred = seg.slope * static_cast<long double>(keys_[i]) + seg.intercept;
+        long double err = std::abs(pred - static_cast<long double>(i));
+        if (err > max_err) max_err = err;
         if (err > config_.epsilon + 1e-9) {
             violations++;
         }

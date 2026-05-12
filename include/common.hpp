@@ -33,8 +33,8 @@ struct PLASegment {
     size_t end;         // end rank in logical array
     Key first_key;
     Key last_key;
-    double slope;
-    double intercept;
+    long double slope;
+    long double intercept;
 
     // For lazy shift tracking
     int64_t lazy_shift{0};

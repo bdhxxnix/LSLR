@@ -24,8 +24,8 @@ int main() {
                     break;
                 }
             }
-            double pred = segs[seg_id].slope * keys[i] + segs[seg_id].intercept;
-            double err = std::abs(pred - static_cast<double>(i));
+            long double pred = segs[seg_id].slope * static_cast<long double>(keys[i]) + segs[seg_id].intercept;
+            long double err = std::abs(pred - static_cast<long double>(i));
             if (err > 1.0 + 1e-9) {
                 std::cerr << "  ERROR at index " << i << ": key=" << keys[i]
                           << " pred=" << pred << " actual=" << i
@@ -65,9 +65,9 @@ int main() {
                         break;
                     }
                 }
-                double pred = segs[seg_id].slope * keys[i] + segs[seg_id].intercept;
-                double err = std::abs(pred - static_cast<double>(i));
-                max_err = std::max(max_err, err);
+                long double pred = segs[seg_id].slope * static_cast<long double>(keys[i]) + segs[seg_id].intercept;
+                long double err = std::abs(pred - static_cast<long double>(i));
+                max_err = std::max(max_err, static_cast<double>(err));
             }
             std::cout << "  max_err=" << max_err << " (bound=" << eps << ")";
             if (max_err <= eps + 1e-9) {

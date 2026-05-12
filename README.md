@@ -33,6 +33,7 @@ cost is proportional to the window size, not the full dataset.
 | FullRebuildEach | Full OptimalPLA rebuild after every insertion. Correctness oracle, but O(u·n). |
 | FullRebuildFinal | Build once on the final dataset after all insertions. Quality oracle. |
 | PeriodicRebuild | Rebuild every B insertions (default: 1% of n). Fastest amortized, but stale between rebuilds. |
+| DynamicLearnedIndex | Sgelet et al. PGM-index variant. Uses (rank, key) coordinates with RankHullTree dynamic convex hull. Supports insert/delete. |
 
 ## Project Structure
 
@@ -40,20 +41,27 @@ cost is proportional to the window size, not the full dataset.
 dynamic_optimalPLA/
 ├── include/
 │   ├── common.hpp          # Shared types, PLASegment, ExperimentResult, Timer
-│   ├── optimal_pla.hpp     # OptimalPLA builder (greedy minimum-segment)
+│   ├── optimal_pla.hpp     # OptimalPLA builder (convex hull algorithm, header-only)
 │   ├── lslr_pla.hpp        # LSLR-PLA dynamic index + FenwickTree
 │   ├── baselines.hpp       # FullRebuildEach, FullRebuildFinal, PeriodicRebuild
 │   └── data_generator.hpp  # Synthetic distributions + fb_200M binary loader
 ├── src/
-│   ├── optimal_pla.cpp     # Core algorithm: polygon clipping in (slope, intercept) space
+│   ├── optimal_pla.cpp     # Stub (OptimalPLA is header-only in optimal_pla.hpp)
 │   ├── lslr_pla.cpp        # Insert logic: lazy shift, local repair, segment replacement
 │   ├── baselines.cpp       # Baseline implementations
 │   └── data_generator.cpp  # Dataset generation + SOSD binary loading
+├── baseline/               # DynamicLearnedIndex (Sgelet et al.) reference implementation
+│   ├── convex_hull/        #   RankHullTree + AvlTree (dynamic convex hull maintenance)
+│   └── learned_index/      #   LineTree + LearnedIndex (segment tree + page storage)
+├── baseline_wrapper.hpp    # PIMPL wrapper isolating baseline headers from our code
+├── baseline_wrapper.cpp    # Wrapper implementation with __int128 BigQuotient
+├── compare.cpp             # Head-to-head comparison: LSLR-PLA vs DynamicLearnedIndex
 ├── main.cpp                # Full experiment matrix runner
 ├── benchmark.cpp           # Single-dataset head-to-head comparison (100K sample)
 ├── benchmark_full.cpp      # Full-scale benchmark (up to 200M keys)
 ├── test.cpp                # OptimalPLA unit tests
 ├── test_lslr.cpp           # LSLR-PLA unit tests
+├── analysis.md             # Detailed analysis: algorithms, baselines, experimental results
 ├── scripts/
 │   └── plot_results.py     # Generate comparison tables from experiment CSV
 ├── CMakeLists.txt
@@ -74,6 +82,7 @@ Requires: C++17, CMake 3.16+.
 |--------|---------|
 | `build/experiments` | Full config matrix across datasets/sizes/epsilons/workloads |
 | `build/benchmark_full` | Single run on fb_200M at scale (configurable n, eps) |
+| `build/compare` | Head-to-head comparison: LSLR-PLA vs DynamicLearnedIndex |
 
 ## Quick Start
 
@@ -100,12 +109,19 @@ Arguments: `benchmark_full [epsilon] [n_initial] [n_insert] [run_fbe]`
 ## Key Implementation Details
 
 ### OptimalPLA algorithm
-Uses incremental convex polygon clipping in (slope, intercept) dual space.
-Each point adds two half-plane constraints. The feasible region is the
-intersection of all half-planes. When it becomes empty, a new segment starts.
 
-The initial bounding box is **data-dependent** — scaled to the key range
-to avoid double-precision loss (the original `1e15` bound caused `1e15+1 == 1e15`).
+Based on: *"Maximum error-bounded Piecewise Linear Representation for online
+stream approximation"* (Xie et al., 2014), implemented in the PGM-index.
+
+Maintains two **convex hulls** in (key, rank) space: an upper hull of points
+shifted by +ε and a lower hull of points shifted by -ε. The current feasible
+region is captured by a 4-point rectangle; a new point is feasible iff its
+shifted points fall within the rectangle's slope bounds. Feasibility check
+is O(1), point addition is O(1) amortized (convex hull walk with pruning).
+
+Uses `__int128` for exact cross products. The mid-slope of the feasible range
+is selected as the segment slope, making the algorithm greedy (not strictly
+optimal in segment count).
 
 ### Lazy shift
 After inserting at rank p into segment q, all segments after q have their
@@ -122,6 +138,25 @@ last_key) is kept consistent.
 ### Segment lookup
 Binary search on `first_key` values. Key-based (not rank-based) to avoid
 staleness issues after insertions shift all ranks.
+
+## Comparison with DynamicLearnedIndex
+
+A key architectural difference: LSLR-PLA models **rank = a·key + b** (epsilon in
+rank units), while DLI models **key = a·rank + b** (epsilon in key units).
+Epsilon means fundamentally different things in the two systems. For a fair
+comparison, convert epsilon using the average keys-per-rank:
+
+```
+eps_key = eps_rank × (key_range / n_keys)
+```
+
+At equivalent epsilon (~24,000 key-space for our eps=64 rank-space), both methods
+achieve near-optimal segment counts. See `analysis.md` for the full comparison
+and `compare.cpp` for the benchmark.
+
+```bash
+./build/compare [n_initial_M] [n_insert]
+```
 
 ## Datasets
 

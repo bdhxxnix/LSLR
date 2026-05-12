@@ -108,8 +108,8 @@ int main(int argc, char** argv) {
                 if (oracle_segs[mid].first_key <= all_keys[i]) lo = mid;
                 else hi = mid - 1;
             }
-            double pred = oracle_segs[lo].slope * all_keys[i] + oracle_segs[lo].intercept;
-            double err = std::abs(pred - static_cast<double>(i));
+            long double pred = oracle_segs[lo].slope * static_cast<long double>(all_keys[i]) + oracle_segs[lo].intercept;
+            long double err = std::abs(pred - static_cast<long double>(i));
             if (err > max_err) max_err = err;
         }
         std::cout << "  oracle max_err=" << max_err << "\n";
@@ -122,8 +122,8 @@ int main(int argc, char** argv) {
     // ================================================================
     if (run_fbe) {
         std::cout << "\n[FullRebuildEach] WARNING: extremely slow at this scale\n";
-        size_t n_fbe = std::min(n_insert, size_t(1000));  // cap at 1000 inserts
-        std::cout << "  Running only " << n_fbe << " insertions..." << std::flush;
+        size_t n_fbe = std::min(n_insert, size_t(100000));  // cap at 1000 inserts
+        // std::cout << "  Running only " << n_fbe << " insertions..." << std::flush;
         FullRebuildEach fre(epsilon);
         fre.build(keys);
         std::vector<double> times;
@@ -158,7 +158,7 @@ int main(int argc, char** argv) {
     // 2. PeriodicRebuild
     // ================================================================
     {
-        size_t interval = std::max(size_t(1), n_initial / 100);  // every 1%
+        size_t interval = std::max(size_t(1), n_insert / 10);  // 10 rebuilds total
         std::cout << "\n[PeriodicRebuild every " << interval << " inserts] "
                   << n_insert << " insertions..." << std::flush;
         PeriodicRebuild pr(epsilon, interval);

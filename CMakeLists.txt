@@ -9,7 +9,6 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 set(CORE_SOURCES
-    src/optimal_pla.cpp
     src/lslr_pla.cpp
     src/baselines.cpp
     src/data_generator.cpp
@@ -17,3 +16,12 @@ set(CORE_SOURCES
 
 add_executable(experiments ${CORE_SOURCES} main.cpp)
 add_executable(benchmark_full ${CORE_SOURCES} benchmark_full.cpp)
+add_executable(debug_precision ${CORE_SOURCES} debug_precision.cpp)
+
+# Comparison: LSLR-PLA vs DynamicLearnedIndex baseline
+add_executable(compare ${CORE_SOURCES} baseline_wrapper.cpp compare.cpp)
+target_include_directories(compare PRIVATE ${CMAKE_SOURCE_DIR}/baseline)
+target_compile_options(compare PRIVATE -Wno-unused-parameter)
+add_executable(debug_baseline ${CORE_SOURCES} baseline_wrapper.cpp debug_baseline.cpp)
+target_include_directories(debug_baseline PRIVATE ${CMAKE_SOURCE_DIR}/baseline)
+target_compile_options(debug_baseline PRIVATE -Wno-unused-parameter)
