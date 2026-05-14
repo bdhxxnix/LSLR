@@ -101,15 +101,25 @@ resorting to arbitrary precision.
 **Insert key \(x\) at rank \(p\) into segment \(q\):**
 
 1. Insert \(x\) into the global sorted array (permanent)
+
 2. `q = find_segment(x)` — key-based binary search on segment `first_key` values
+
 3. `segments[q].end += 1` and update `last_key` if \(x\) extends the range
+
 4. For all \(j > q\): `segments[j].start++, .end++, .intercept += 1` (lazy shift)
+
 5. Select window \([q-c,\; q+c]\) clamped to \([0, m-1]\)
+
 6. Extract keys by key range `[segments[left].first_key, segments[right].last_key]`
+
 7. Rebuild OptimalPLA on local keys → `new_local_segments`
+
 8. Adaptive expansion: try merging new boundary segments with outside neighbors;
    if merge fails and adaptive mode is on, expand window and retry
+
 9. `replace_segments(left, right, new_local_segments)` — splice and rebuild `first_key` index
+
+   ![ChatGPT Image 2026年5月13日 21_28_31](/home/andy/Downloads/ChatGPT Image 2026年5月13日 21_28_31.png)
 
 ### 2.2 Why lazy shift is correct
 

@@ -1,4 +1,6 @@
 /home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles/experiments.dir
 /home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles/benchmark_full.dir
+/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles/debug_precision.dir
+/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles/compare.dir
 /home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles/edit_cache.dir
 /home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles/rebuild_cache.dir

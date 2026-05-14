@@ -142,6 +142,56 @@ benchmark_full/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/build
 .PHONY : benchmark_full/fast
 
+#=============================================================================
+# Target rules for targets named debug_precision
+
+# Build rule for target.
+debug_precision: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 debug_precision
+.PHONY : debug_precision
+
+# fast build rule for target.
+debug_precision/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/build
+.PHONY : debug_precision/fast
+
+#=============================================================================
+# Target rules for targets named compare
+
+# Build rule for target.
+compare: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compare
+.PHONY : compare
+
+# fast build rule for target.
+compare/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/build
+.PHONY : compare/fast
+
+baseline_wrapper.o: baseline_wrapper.cpp.o
+.PHONY : baseline_wrapper.o
+
+# target to build an object file
+baseline_wrapper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/baseline_wrapper.cpp.o
+.PHONY : baseline_wrapper.cpp.o
+
+baseline_wrapper.i: baseline_wrapper.cpp.i
+.PHONY : baseline_wrapper.i
+
+# target to preprocess a source file
+baseline_wrapper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/baseline_wrapper.cpp.i
+.PHONY : baseline_wrapper.cpp.i
+
+baseline_wrapper.s: baseline_wrapper.cpp.s
+.PHONY : baseline_wrapper.s
+
+# target to generate assembly for a file
+baseline_wrapper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/baseline_wrapper.cpp.s
+.PHONY : baseline_wrapper.cpp.s
+
 benchmark_full.o: benchmark_full.cpp.o
 .PHONY : benchmark_full.o
 
@@ -165,6 +215,54 @@ benchmark_full.s: benchmark_full.cpp.s
 benchmark_full.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/benchmark_full.cpp.s
 .PHONY : benchmark_full.cpp.s
+
+compare.o: compare.cpp.o
+.PHONY : compare.o
+
+# target to build an object file
+compare.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/compare.cpp.o
+.PHONY : compare.cpp.o
+
+compare.i: compare.cpp.i
+.PHONY : compare.i
+
+# target to preprocess a source file
+compare.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/compare.cpp.i
+.PHONY : compare.cpp.i
+
+compare.s: compare.cpp.s
+.PHONY : compare.s
+
+# target to generate assembly for a file
+compare.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/compare.cpp.s
+.PHONY : compare.cpp.s
+
+debug_precision.o: debug_precision.cpp.o
+.PHONY : debug_precision.o
+
+# target to build an object file
+debug_precision.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/debug_precision.cpp.o
+.PHONY : debug_precision.cpp.o
+
+debug_precision.i: debug_precision.cpp.i
+.PHONY : debug_precision.i
+
+# target to preprocess a source file
+debug_precision.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/debug_precision.cpp.i
+.PHONY : debug_precision.cpp.i
+
+debug_precision.s: debug_precision.cpp.s
+.PHONY : debug_precision.s
+
+# target to generate assembly for a file
+debug_precision.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/debug_precision.cpp.s
+.PHONY : debug_precision.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -197,6 +295,8 @@ src/baselines.o: src/baselines.cpp.o
 src/baselines.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/baselines.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/baselines.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/baselines.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/baselines.cpp.o
 .PHONY : src/baselines.cpp.o
 
 src/baselines.i: src/baselines.cpp.i
@@ -206,6 +306,8 @@ src/baselines.i: src/baselines.cpp.i
 src/baselines.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/baselines.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/baselines.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/baselines.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/baselines.cpp.i
 .PHONY : src/baselines.cpp.i
 
 src/baselines.s: src/baselines.cpp.s
@@ -215,6 +317,8 @@ src/baselines.s: src/baselines.cpp.s
 src/baselines.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/baselines.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/baselines.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/baselines.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/baselines.cpp.s
 .PHONY : src/baselines.cpp.s
 
 src/data_generator.o: src/data_generator.cpp.o
@@ -224,6 +328,8 @@ src/data_generator.o: src/data_generator.cpp.o
 src/data_generator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/data_generator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/data_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/data_generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/data_generator.cpp.o
 .PHONY : src/data_generator.cpp.o
 
 src/data_generator.i: src/data_generator.cpp.i
@@ -233,6 +339,8 @@ src/data_generator.i: src/data_generator.cpp.i
 src/data_generator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/data_generator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/data_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/data_generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/data_generator.cpp.i
 .PHONY : src/data_generator.cpp.i
 
 src/data_generator.s: src/data_generator.cpp.s
@@ -242,6 +350,8 @@ src/data_generator.s: src/data_generator.cpp.s
 src/data_generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/data_generator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/data_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/data_generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/data_generator.cpp.s
 .PHONY : src/data_generator.cpp.s
 
 src/lslr_pla.o: src/lslr_pla.cpp.o
@@ -251,6 +361,8 @@ src/lslr_pla.o: src/lslr_pla.cpp.o
 src/lslr_pla.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/lslr_pla.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/lslr_pla.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/lslr_pla.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/lslr_pla.cpp.o
 .PHONY : src/lslr_pla.cpp.o
 
 src/lslr_pla.i: src/lslr_pla.cpp.i
@@ -260,6 +372,8 @@ src/lslr_pla.i: src/lslr_pla.cpp.i
 src/lslr_pla.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/lslr_pla.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/lslr_pla.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/lslr_pla.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/lslr_pla.cpp.i
 .PHONY : src/lslr_pla.cpp.i
 
 src/lslr_pla.s: src/lslr_pla.cpp.s
@@ -269,34 +383,9 @@ src/lslr_pla.s: src/lslr_pla.cpp.s
 src/lslr_pla.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/lslr_pla.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/lslr_pla.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_precision.dir/build.make CMakeFiles/debug_precision.dir/src/lslr_pla.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compare.dir/build.make CMakeFiles/compare.dir/src/lslr_pla.cpp.s
 .PHONY : src/lslr_pla.cpp.s
-
-src/optimal_pla.o: src/optimal_pla.cpp.o
-.PHONY : src/optimal_pla.o
-
-# target to build an object file
-src/optimal_pla.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/optimal_pla.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/optimal_pla.cpp.o
-.PHONY : src/optimal_pla.cpp.o
-
-src/optimal_pla.i: src/optimal_pla.cpp.i
-.PHONY : src/optimal_pla.i
-
-# target to preprocess a source file
-src/optimal_pla.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/optimal_pla.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/optimal_pla.cpp.i
-.PHONY : src/optimal_pla.cpp.i
-
-src/optimal_pla.s: src/optimal_pla.cpp.s
-.PHONY : src/optimal_pla.s
-
-# target to generate assembly for a file
-src/optimal_pla.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/experiments.dir/build.make CMakeFiles/experiments.dir/src/optimal_pla.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_full.dir/build.make CMakeFiles/benchmark_full.dir/src/optimal_pla.cpp.s
-.PHONY : src/optimal_pla.cpp.s
 
 # Help Target
 help:
@@ -307,10 +396,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... benchmark_full"
+	@echo "... compare"
+	@echo "... debug_precision"
 	@echo "... experiments"
+	@echo "... baseline_wrapper.o"
+	@echo "... baseline_wrapper.i"
+	@echo "... baseline_wrapper.s"
 	@echo "... benchmark_full.o"
 	@echo "... benchmark_full.i"
 	@echo "... benchmark_full.s"
+	@echo "... compare.o"
+	@echo "... compare.i"
+	@echo "... compare.s"
+	@echo "... debug_precision.o"
+	@echo "... debug_precision.i"
+	@echo "... debug_precision.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -323,9 +423,6 @@ help:
 	@echo "... src/lslr_pla.o"
 	@echo "... src/lslr_pla.i"
 	@echo "... src/lslr_pla.s"
-	@echo "... src/optimal_pla.o"
-	@echo "... src/optimal_pla.i"
-	@echo "... src/optimal_pla.s"
 .PHONY : help
 
 

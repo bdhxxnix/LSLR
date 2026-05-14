@@ -42,4 +42,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/experiments.dir/DependInfo.cmake"
   "CMakeFiles/benchmark_full.dir/DependInfo.cmake"
+  "CMakeFiles/debug_precision.dir/DependInfo.cmake"
+  "CMakeFiles/compare.dir/DependInfo.cmake"
   )

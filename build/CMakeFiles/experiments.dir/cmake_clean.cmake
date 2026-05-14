@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/experiments.dir/src/data_generator.cpp.o.d"
   "CMakeFiles/experiments.dir/src/lslr_pla.cpp.o"
   "CMakeFiles/experiments.dir/src/lslr_pla.cpp.o.d"
-  "CMakeFiles/experiments.dir/src/optimal_pla.cpp.o"
-  "CMakeFiles/experiments.dir/src/optimal_pla.cpp.o.d"
   "experiments"
   "experiments.pdb"
 )

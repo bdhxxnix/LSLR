@@ -69,24 +69,10 @@ include CMakeFiles/experiments.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/experiments.dir/flags.make
 
-CMakeFiles/experiments.dir/src/optimal_pla.cpp.o: CMakeFiles/experiments.dir/flags.make
-CMakeFiles/experiments.dir/src/optimal_pla.cpp.o: /home/andy/Projects/playground/dynamic_optimalPLA/src/optimal_pla.cpp
-CMakeFiles/experiments.dir/src/optimal_pla.cpp.o: CMakeFiles/experiments.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/experiments.dir/src/optimal_pla.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/experiments.dir/src/optimal_pla.cpp.o -MF CMakeFiles/experiments.dir/src/optimal_pla.cpp.o.d -o CMakeFiles/experiments.dir/src/optimal_pla.cpp.o -c /home/andy/Projects/playground/dynamic_optimalPLA/src/optimal_pla.cpp
-
-CMakeFiles/experiments.dir/src/optimal_pla.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/experiments.dir/src/optimal_pla.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andy/Projects/playground/dynamic_optimalPLA/src/optimal_pla.cpp > CMakeFiles/experiments.dir/src/optimal_pla.cpp.i
-
-CMakeFiles/experiments.dir/src/optimal_pla.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/experiments.dir/src/optimal_pla.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andy/Projects/playground/dynamic_optimalPLA/src/optimal_pla.cpp -o CMakeFiles/experiments.dir/src/optimal_pla.cpp.s
-
 CMakeFiles/experiments.dir/src/lslr_pla.cpp.o: CMakeFiles/experiments.dir/flags.make
 CMakeFiles/experiments.dir/src/lslr_pla.cpp.o: /home/andy/Projects/playground/dynamic_optimalPLA/src/lslr_pla.cpp
 CMakeFiles/experiments.dir/src/lslr_pla.cpp.o: CMakeFiles/experiments.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/experiments.dir/src/lslr_pla.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/experiments.dir/src/lslr_pla.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/experiments.dir/src/lslr_pla.cpp.o -MF CMakeFiles/experiments.dir/src/lslr_pla.cpp.o.d -o CMakeFiles/experiments.dir/src/lslr_pla.cpp.o -c /home/andy/Projects/playground/dynamic_optimalPLA/src/lslr_pla.cpp
 
 CMakeFiles/experiments.dir/src/lslr_pla.cpp.i: cmake_force
@@ -100,7 +86,7 @@ CMakeFiles/experiments.dir/src/lslr_pla.cpp.s: cmake_force
 CMakeFiles/experiments.dir/src/baselines.cpp.o: CMakeFiles/experiments.dir/flags.make
 CMakeFiles/experiments.dir/src/baselines.cpp.o: /home/andy/Projects/playground/dynamic_optimalPLA/src/baselines.cpp
 CMakeFiles/experiments.dir/src/baselines.cpp.o: CMakeFiles/experiments.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/experiments.dir/src/baselines.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/experiments.dir/src/baselines.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/experiments.dir/src/baselines.cpp.o -MF CMakeFiles/experiments.dir/src/baselines.cpp.o.d -o CMakeFiles/experiments.dir/src/baselines.cpp.o -c /home/andy/Projects/playground/dynamic_optimalPLA/src/baselines.cpp
 
 CMakeFiles/experiments.dir/src/baselines.cpp.i: cmake_force
@@ -114,7 +100,7 @@ CMakeFiles/experiments.dir/src/baselines.cpp.s: cmake_force
 CMakeFiles/experiments.dir/src/data_generator.cpp.o: CMakeFiles/experiments.dir/flags.make
 CMakeFiles/experiments.dir/src/data_generator.cpp.o: /home/andy/Projects/playground/dynamic_optimalPLA/src/data_generator.cpp
 CMakeFiles/experiments.dir/src/data_generator.cpp.o: CMakeFiles/experiments.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/experiments.dir/src/data_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/experiments.dir/src/data_generator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/experiments.dir/src/data_generator.cpp.o -MF CMakeFiles/experiments.dir/src/data_generator.cpp.o.d -o CMakeFiles/experiments.dir/src/data_generator.cpp.o -c /home/andy/Projects/playground/dynamic_optimalPLA/src/data_generator.cpp
 
 CMakeFiles/experiments.dir/src/data_generator.cpp.i: cmake_force
@@ -128,7 +114,7 @@ CMakeFiles/experiments.dir/src/data_generator.cpp.s: cmake_force
 CMakeFiles/experiments.dir/main.cpp.o: CMakeFiles/experiments.dir/flags.make
 CMakeFiles/experiments.dir/main.cpp.o: /home/andy/Projects/playground/dynamic_optimalPLA/main.cpp
 CMakeFiles/experiments.dir/main.cpp.o: CMakeFiles/experiments.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/experiments.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/experiments.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/experiments.dir/main.cpp.o -MF CMakeFiles/experiments.dir/main.cpp.o.d -o CMakeFiles/experiments.dir/main.cpp.o -c /home/andy/Projects/playground/dynamic_optimalPLA/main.cpp
 
 CMakeFiles/experiments.dir/main.cpp.i: cmake_force
@@ -141,7 +127,6 @@ CMakeFiles/experiments.dir/main.cpp.s: cmake_force
 
 # Object files for target experiments
 experiments_OBJECTS = \
-"CMakeFiles/experiments.dir/src/optimal_pla.cpp.o" \
 "CMakeFiles/experiments.dir/src/lslr_pla.cpp.o" \
 "CMakeFiles/experiments.dir/src/baselines.cpp.o" \
 "CMakeFiles/experiments.dir/src/data_generator.cpp.o" \
@@ -150,14 +135,13 @@ experiments_OBJECTS = \
 # External object files for target experiments
 experiments_EXTERNAL_OBJECTS =
 
-experiments: CMakeFiles/experiments.dir/src/optimal_pla.cpp.o
 experiments: CMakeFiles/experiments.dir/src/lslr_pla.cpp.o
 experiments: CMakeFiles/experiments.dir/src/baselines.cpp.o
 experiments: CMakeFiles/experiments.dir/src/data_generator.cpp.o
 experiments: CMakeFiles/experiments.dir/main.cpp.o
 experiments: CMakeFiles/experiments.dir/build.make
 experiments: CMakeFiles/experiments.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable experiments"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/andy/Projects/playground/dynamic_optimalPLA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable experiments"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/experiments.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

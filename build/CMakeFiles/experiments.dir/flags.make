@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/andy/Projects/playground/dynamic_optimalPLA/include
 
-CXX_FLAGS = -O3 -march=native -DNDEBUG -std=gnu++17
+CXX_FLAGS = -O0 -g -O3 -march=native -DNDEBUG -std=gnu++17
 
